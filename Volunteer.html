@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Assets/favicon.png">
+    <title>VOLUNTEER</title>
+
+    <!--  Alpine.js  -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Css Link -->
+    <link rel="stylesheet" href="Css/style.css">
+    <!-- Google Fonts: Barlow (Alternative for Din Neuzeit Grotesk) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="bg-[#0B2369] shadow-lg font-sans relative">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Main navigation bar content. The logo and links are now grouped. -->
+            <div class="flex items-center justify-between md:justify-center h-28">
+                <!-- Grouping of Logo, Nav Links, and Donate Button -->
+                <div class="flex items-center space-x-12">
+                    <!-- Logo -->
+                    <div>
+                        <a href="index.html" class="flex items-center space-x-2 text-white">
+                            <img class="h-16 w-auto" src="Assets/kamlogo.png" alt="Logo">
+                        </a>
+                    </div>
+
+                    <!-- Desktop Menu Links, Contact, and Donate Button -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <!-- 'Who We Are' Dropdown Trigger -->
+                        <div class="group relative" data-dropdown-id="who-we-are-dropdown">
+                            <a href="#"
+                                class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Who
+                                We
+                                Are</a>
+                        </div>
+
+                        <!-- 'What We Do' Dropdown Trigger -->
+                        <div class="group relative" data-dropdown-id="what-we-do-dropdown">
+                            <a href="#"
+                                class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">What
+                                We Do</a>
+                        </div>
+
+                        <!-- 'Get Involved' Dropdown Trigger -->
+                        <div class="group relative" data-dropdown-id="get-involved-dropdown">
+                            <a href="#"
+                                class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Get
+                                Involved</a>
+                        </div>
+
+                        <!-- Other Links -->
+                        <a href="Resources.html"
+                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Resources</a>
+
+                        <!-- 'Contact' link, now without a dropdown -->
+                        <a href="Contact.html"
+                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Contact</a>
+
+                        <!-- Donate Button -->
+                        <div>
+                            <!-- Using custom hex colors for background and hover effect -->
+                            <a href="Contact.html"
+                                class="inline-block bg-[#F7D57F] text-[#0B2369] font-light font-semibold py-3 px-8 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300 text-lg">
+                                Donate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-[#F7D57F] hover:bg-[#1A3B8A] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Icon for menu (hamburger) -->
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- "Who We Are" Full-Width Dropdown Menu (Desktop) -->
+        <div id="who-we-are-dropdown"
+            class="desktop-dropdown-links absolute inset-x-0 top-full hidden bg-[#0B2369] shadow-lg z-40 py-8 h-64">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-start justify-between text-white space-x-4">
+                    <!-- Links -->
+                    <div class="flex-grow grid grid-cols-2 gap-x-12 gap-y-4 font-semibold text-xl">
+                        <!-- Added nav-link-underline class to each link -->
+                        <a href="vision.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">OUR
+                            VISION</a>
+                        <a href="Values.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">OUR
+                            VALUES</a>
+                        <a href="Statement.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">STATEMENT
+                            OF FAITH</a>
+                        <a href="Team.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">LEADERSHIP
+                            TEAM</a>
+                    </div>
+                    <!-- Buttons/Images -->
+                    <div class="flex flex-col flex-shrink-0">
+                        <!-- CONTACT US Button (with the new left-arrow-head style) -->
+                        <div class="relative inline-block mb-16">
+                            <!-- Floating Image -->
+                            <img src="Team/IMMACULE KAM.jpg" alt="Connect Us"
+                                class="absolute left-[1rem] top-1/2 transform -translate-y-1/2 h-20 w-20 object-cover z-20">
+
+                            <!-- Button Background with arrow shape on the left side -->
+                            <a href="Contact.html"
+                                class="btn-left-arrow-head flex items-center bg-[#F7D57F] hover:bg-[#E6C46E] transition-colors py-3 pl-14 pr-8 shadow-md relative z-10 ml-[6rem]">
+                                <span class="text-[#0B2369] font-bold text-base uppercase tracking-wide">
+                                    Contact Us
+                                </span>
+                            </a>
+                        </div>
+
+                        <!-- ABOUT US Button (with the new left-arrow-head style) -->
+                        <div class="relative inline-block">
+                            <!-- Floating Image -->
+                            <img src="Team/P4 (1).jpg" alt="About Us"
+                                class="absolute left-[1rem] top-1/2 transform -translate-y-1/2 h-20 w-20 object-cover z-20">
+
+                            <!-- Button Background with arrow shape on the left side -->
+                            <a href="about.html"
+                                class="btn-left-arrow-head flex items-center bg-[#F7D57F] hover:bg-[#E6C46E] transition-colors py-3 pl-14 pr-8 shadow-md relative z-10 ml-[6rem]">
+                                <span class="text-[#0B2369] font-bold text-base uppercase tracking-wide">
+                                    About Us
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- "What We Do" Full-Width Dropdown Menu (Desktop) -->
+        <div id="what-we-do-dropdown"
+            class="desktop-dropdown-links absolute inset-x-0 top-full hidden bg-[#0B2369] shadow-lg z-40 py-8 h-64">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 gap-x-12 text-white items-start">
+                    <!-- Left Column with 4 Links -->
+                    <div class="flex flex-col space-y-4 font-semibold text-xl">
+                        <!-- Added nav-link-underline class to each link -->
+                        <a href="Goafrica.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">GO
+                            AFRICA</a>
+                        <a href="Mercy.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">MERCY
+                            MINISTRY</a>
+                        <a href="Impact.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">IMPACT
+                            THE WORLD</a>
+                        <a href="wondermas.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">WONDERMAS
+                            CHILD PROGRAM</a>
+                    </div>
+                    <!-- Right Column with 2 Links -->
+                    <div class="flex flex-col space-y-4 font-semibold text-xl">
+                        <!-- Added nav-link-underline class to each link -->
+                        <a href="Reachout.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200 uppercase">REACHING
+                            OUT TO COMMUNITIES FOR CHRIST</a>
+                        <a href="Training.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200 uppercase">TRAINING,
+                            EQUIPPING CHURCHES FOR MISSIONS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- "Get Involved" Full-Width Dropdown Menu (Desktop) -->
+        <div id="get-involved-dropdown"
+            class="desktop-dropdown-links absolute inset-x-0 top-full hidden bg-[#0B2369] shadow-lg z-40 py-8 h-64">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 gap-x-12 text-white items-start">
+                    <!-- Left Column with 4 Links -->
+                    <div class="flex flex-col space-y-4 font-semibold text-xl">
+                        <!-- Added nav-link-underline class to each link -->
+                        <a href="Volunteer.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">VOLUNTEER</a>
+                        <a href="Pray.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">PRAY</a>
+                        <a href="Training.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">TRAIN</a>
+                        <a href="#"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">GIVE</a>
+                    </div>
+                    <!-- Right Column with 1 Link -->
+                    <div class="flex flex-col space-y-4 font-semibold text-xl">
+                        <!-- Added nav-link-underline class to the link -->
+                        <a href="Events.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">EVENT</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu, show/hide based on menu state. -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-2 sm:px-3">
+
+                <!-- Mobile Dropdown for 'Who We Are' -->
+                <div class="mobile-dropdown-toggle-container">
+                    <button
+                        class="w-full text-left text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-xl font-semibold">Who
+                        We Are</button>
+                    <div class="mobile-dropdown-links hidden pl-6 pt-2 space-y-2">
+                        <a href="vision.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">OUR
+                            VISION</a>
+                        <a href="Values.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">OUR
+                            VALUES</a>
+                        <a href="Statement.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">STATEMENT
+                            OF FAITH</a>
+                        <a href="Team.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">LEADERSHIP
+                            TEAM</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Dropdown for 'What We Do' -->
+                <div class="mobile-dropdown-toggle-container">
+                    <button
+                        class="w-full text-left text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-xl font-semibold">What
+                        We Do</button>
+                    <div class="mobile-dropdown-links hidden pl-6 pt-2 space-y-2">
+                        <a href="Goafrica.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">GO
+                            AFRICA</a>
+                        <a href="Mercy.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">MERCY
+                            MINISTRY</a>
+                        <a href="Impact.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">IMPACT
+                            THE WORLD</a>
+                        <a href="wondermas.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">WONDERMAS
+                            CHILD PROGRAM</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Dropdown for 'Get Involved' -->
+                <div class="mobile-dropdown-toggle-container">
+                    <button
+                        class="w-full text-left text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-xl font-semibold">Get
+                        Involved</button>
+                    <div class="mobile-dropdown-links hidden pl-6 pt-2 space-y-2">
+                        <a href="Volunteer.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">VOLUNTEER</a>
+                        <a href="Pray.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">PRAY</a>
+                        <a href="Training.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">TRAIN</a>
+                        <a href="#"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">GIVE</a>
+                        <a href="Event.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">EVENT</a>
+                    </div>
+                </div>
+
+                <!-- Regular mobile links -->
+                <a href="Resources.html"
+                    class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-xl font-semibold">Resources</a>
+                <a href="Contact.html"
+                    class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-xl font-semibold">Contact</a>
+                <div class="mt-4 px-2">
+                    <a href="#"
+                        class="inline-block w-full text-center bg-[#F7D57F] text-[#0B2369] font-light py-3 px-8 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300">
+                        Donate
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+    <section class="relative">
+        <!-- Full-width Image -->
+        <img src="Assets/volunteer1.png" alt="Team Event Banner" class="w-full h-[500px] object-cover">
+
+        <!-- Arrow + Heading slightly beneath the image and aligned left -->
+        <div class="bg-white pt-6 pb-12 relative z-10">
+            <div class="container mx-auto px-6 md:px-16">
+                <div class="flex flex-col items-start -mt-10"> <!-- Pull upward slightly -->
+                    <!-- Downward Yellow Arrow -->
+                    <div>
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="#F5C543"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 21L3 6H21L12 21Z" />
+                        </svg>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <div class="container mx-auto px-4 py-12 md:py-16">
+        <!-- Volunteer Introduction Section -->
+        <h1 class="playfair text-3xl md:text-4xl lg:text-5xl font-semibold text-custom-blue mb-12 max-w-4xl mx-auto">
+            Volunteer
+        </h1>
+
+        <div class="max-w-4xl mx-auto text-gray-700 text-lg leading-relaxed mb-16">
+            <p class="mb-6">
+                Are you looking for ways to serve God and broaden your horizons?
+            </p>
+            <p class="mb-6">
+                Are you passionate about sharing the love of Christ and helping others discover their purpose? Kingdom
+                Ambassadors Missions is looking for dedicated volunteers to serve alongside us in various ways.
+            </p>
+            <p class="mb-6">
+                Whether it's street evangelism, organizing events, media and communications, mentorship, discipleship,
+                or
+                community outreach, there's a place for you to make an impact.
+            </p>
+            <p>
+                As a volunteer, you'll grow in your faith, develop your gifts, and be part of a mission that transforms
+                lives. Join us today and be the hands and feet of Christ in your community and beyond.
+            </p>
+        </div>
+    </div>
+
+
+
+
+    <!-- Volunteer Opportunities Section -->
+    <section class="bg-custom-dark-blue py-16 md:py-24 text-white">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="playfair text-3xl md:text-4xl font-semibold mb-12 text-white">
+                Volunteer Opportunities
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Event Support -->
+                <div class="bg-white shadow-lg">
+                    <img src="Assets/Event.png" alt="Event Support" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl font-semibold text-custom-blue mb-2">EVENT SUPPORT</h3>
+                        <div class="border-b-2 border-gray-300 pb-2"></div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Street Outreach -->
+                <div class="bg-white shadow-lg">
+                    <img src="Assets/local.jpg" alt="Street Outreach" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl font-semibold text-custom-blue mb-2">STREET OUTREACH</h3>
+                        <div class="border-b-2 border-gray-300 pb-2"></div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Media Support -->
+                <div class="bg-white shadow-lg">
+                    <img src="Assets/download (6).png" alt="Media Support" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl font-semibold text-custom-blue mb-2">MEDIA SUPPORT</h3>
+                        <div class="border-b-2 border-gray-300 pb-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- GET INVOLVED SECTION -->
+    <section class="bg-[#0A133E] text-white py-16 px-4">
+        <!-- Outer container -->
+        <div class="container mx-auto">
+
+            <!-- Shared wrapper for heading and cards -->
+            <div class="max-w-6xl mx-auto">
+                <!-- Aligned Heading -->
+                <h2 class="text-4xl font-bold text-left mb-12">More Ways You Can Get Involved</h2>
+
+                <!-- Cards Wrapper -->
+                <div class="flex flex-wrap gap-8">
+
+                    <!-- Card 1 -->
+                    <div
+                        class="relative group w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] hover:scale-105 hover:z-50 transition-all duration-300 ease-in-out hover:-translate-y-2">
+                        <div class="overflow-hidden shadow-lg w-full relative">
+                            <img src="Assets/Praying In a Church.avif" alt="Praying"
+                                class="w-full h-[20rem] object-cover">
+                        </div>
+                        <div
+                            class="absolute bottom-0 inset-x-0 mx-auto -mb-4 w-[50%] bg-white p-4 shadow-xl group-hover:bg-yellow-500 rounded-2rem-corners">
+                            <h3 class="font-semibold text-blue-600 group-hover:text-gray-900 text-center text-base">Pray
+                            </h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="relative group w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] hover:scale-105 hover:z-50 transition-all duration-300 ease-in-out hover:-translate-y-2">
+                        <div class="overflow-hidden shadow-lg w-full relative">
+                            <img src="Assets/Give.avif" alt="Give" class="w-full h-[20rem] object-cover">
+                        </div>
+                        <div
+                            class="absolute bottom-0 inset-x-0 mx-auto -mb-4 w-[50%] bg-white p-4 shadow-xl group-hover:bg-yellow-500 rounded-2rem-corners">
+                            <h3 class="font-semibold text-blue-600 group-hover:text-gray-900 text-center text-base">Give
+                            </h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div
+                        class="relative group w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] hover:scale-105 hover:z-50 transition-all duration-300 ease-in-out hover:-translate-y-2">
+                        <div class="overflow-hidden shadow-lg w-full relative">
+                            <img src="Assets/Get Trained.avif" alt="Training" class="w-full h-[20rem] object-cover">
+                        </div>
+                        <div
+                            class="absolute bottom-0 inset-x-0 mx-auto -mb-4 w-[50%] bg-white p-4 shadow-xl group-hover:bg-yellow-500 rounded-2rem-corners">
+                            <h3 class="font-semibold text-blue-600 group-hover:text-gray-900 text-center text-base">Get
+                                Trained</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <!-- Main container for the "Get In Touch" section -->
+    <div class="bg-custom-dark-blue min-h-screen flex items-center justify-center py-12">
+        <!-- The inner container for content, keeping it at a fixed width and centered -->
+        <div class="container mx-auto px-4 max-w-5xl">
+
+            <!-- Header content for the section -->
+            <div class="mb-10 md:mb-12 text-white">
+                <h2 class="playfair text-3xl md:text-4xl font-semibold mb-2 text-custom-yellow">
+                    GET IN TOUCH
+                </h2>
+                <p class="text-xl md:text-2xl font-medium">
+                    ARE YOU INTERESTED IN ANY OUR PROGRAMS? WE'D LOVE TO TALK<br>ABOUT HOW WE CAN HELP.
+                </p>
+            </div>
+
+            <!-- Contact form card, with no rounded corners -->
+            <div class="bg-white shadow-lg p-6 md:p-12">
+                <form action="#" method="post">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                        <!-- Left column for First Name, Last Name, Email -->
+                        <div class="space-y-6">
+                            <!-- First Name input with label -->
+                            <div>
+                                <label for="first-name" class="block text-sm font-medium text-custom-blue mb-1">First
+                                    Name</label>
+                                <input type="text" id="first-name" name="first-name" required
+                                    class="mt-1 block w-full border border-gray-300 shadow-sm py-3 px-4 focus:ring-custom-blue focus:border-custom-blue text-gray-900">
+                            </div>
+
+                            <!-- Last Name input with label -->
+                            <div>
+                                <label for="last-name" class="block text-sm font-medium text-custom-blue mb-1">Last
+                                    Name</label>
+                                <input type="text" id="last-name" name="last-name" required
+                                    class="mt-1 block w-full border border-gray-300 shadow-sm py-3 px-4 focus:ring-custom-blue focus:border-custom-blue text-gray-900">
+                            </div>
+
+                            <!-- Email input with label -->
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-custom-blue mb-1">Email</label>
+                                <input type="email" id="email" name="email" required
+                                    class="mt-1 block w-full border border-gray-300 shadow-sm py-3 px-4 focus:ring-custom-blue focus:border-custom-blue text-gray-900">
+                            </div>
+                        </div>
+
+                        <!-- Right column for the message textarea and send button -->
+                        <div class="space-y-6">
+                            <!-- Message textarea with label -->
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-custom-blue mb-1">Tell us a
+                                    little bit about the type of program you're interested in</label>
+                                <textarea id="message" name="message" rows="7"
+                                    class="mt-1 block w-full border border-gray-300 shadow-sm py-3 px-4 focus:ring-custom-blue focus:border-custom-blue text-gray-900 resize-none"></textarea>
+                            </div>
+
+                            <!-- Send button, with no rounded corners -->
+                            <div class="flex justify-end">
+                                <button type="submit" class="w-full md:w-auto py-3 px-8 contact-button">
+                                    Send
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Footer Section -->
+    <footer class="bg-[#C8A25F] text-[#0A133E] py-16 px-4">
+        <div class="container mx-auto">
+            <!-- Footer main content grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center sm:text-left items-center">
+                <div class="flex flex-col items-center sm:items-start">
+                    <a href="index.html">
+                        <img src="Assets/KAM LOGO.png" alt="KAM Logo" class="max-w-[10rem]" />
+                    </a>
+                    <p class="text-lg text-center mt-[-30px]">Kingdom Ambassadors <br>Missions</p>
+                </div>
+
+                <!-- Useful Links -->
+                <div class="flex flex-col items-center sm:items-start justify-center">
+                    <h4 class="text-xl font-bold mb-4">Useful Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">Get Inspired</a></li>
+                        <li><a href="#" class="hover:underline">Donate</a></li>
+                        <li><a href="about.html" class="hover:underline">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="flex flex-col items-center sm:items-start justify-center">
+                    <h4 class="text-xl font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li><strong>Address:</strong> Kigali, Rwanda</li>
+                        <li><strong>Tel:</strong> (250) 785-026-813</li>
+                        <li><strong>Email:</strong> info@kam.org</li>
+                    </ul>
+                </div>
+
+                <!-- Follow -->
+                <div class="flex flex-col items-center sm:items-start justify-center">
+                    <h4 class="text-xl font-bold mb-4">Follow</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">Press & Media</a></li>
+                        <li><a href="#" class="hover:underline">Instagram</a></li>
+                        <li><a href="#" class="hover:underline">Twitter/X</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright notice -->
+            <div class="border-t border-[#0A133E] mt-12 pt-8 text-center text-sm">
+                © By INA Hub
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script src="Js/main.js"></script>
+</body>
+
+</html>

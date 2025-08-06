@@ -1,0 +1,431 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+}
+
+/* Define custom CSS variables for the specified colors */
+:root {
+  --kam-blue: #0b2369;
+  --kam-yellow: #f7d57f;
+  --kam-yellow-dark: #e6c46e;
+}
+
+/* Custom CSS for the underline hover effect on nav links */
+/* This applies to the main nav links (100% width) */
+.nav-link-underline {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.nav-link-underline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* Full width for the main links */
+  height: 2px;
+  background-color: var(--kam-yellow);
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 0.3s ease-out;
+}
+
+.nav-link-underline:hover::after {
+  transform: scaleX(1);
+}
+
+/* Override for dropdown links to reduce the border width to 50% */
+#who-we-are-dropdown .nav-link-underline::after,
+#what-we-do-dropdown .nav-link-underline::after,
+#get-involved-dropdown .nav-link-underline::after {
+  width: 50%;
+}
+
+/* Custom CSS for the arrow-shaped button on the left side using a pseudo-element */
+.btn-left-arrow-head {
+  position: relative;
+  /* Needed for positioning the pseudo-element */
+  overflow: hidden;
+  /* Ensures the pseudo-element doesn't spill out */
+}
+
+.btn-left-arrow-head::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Create a triangle using border styles */
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  /* Half of button height */
+  border-bottom: 25px solid transparent;
+  /* Half of button height */
+  border-left: 20px solid var(--kam-yellow);
+  /* The width and color of the triangle */
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1;
+  /* Ensure it's behind the content but in front of the background */
+}
+
+/* ----- SLIDESHOW STYLES ----- */
+/* The main container that hides overflowing slides */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .slideshow-container {
+    height: 600px;
+  }
+}
+
+/* The inner container that holds all slides and moves left/right */
+.slideshow-inner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  /* Smooth transition for sliding */
+}
+
+/* Individual slide style */
+.mySlides {
+  flex-shrink: 0;
+  /* Prevents slides from shrinking */
+  width: 100%;
+  height: 100%;
+}
+
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Custom class for the yellow box shadow */
+.yellow-shadow {
+  box-shadow: 0 10px 15px -3px var(--kam-yellow),
+    0 4px 6px -4px var(--kam-yellow);
+}
+
+/* Custom class to underline text with the specified yellow color */
+.underline-kam-yellow {
+  text-decoration: underline;
+  text-decoration-color: var(--kam-yellow);
+  text-decoration-thickness: 2px;
+  /* You can adjust the thickness here */
+}
+
+/* Custom color for the background */
+.kam-dark-blue {
+  background-color: #324158;
+}
+
+.kam-dark-blue-button {
+  background-color: #0b1a50;
+}
+
+.bg-card-gray {
+  background-color: #f0f0f0;
+}
+
+/* Custom CSS class for 2rem border radius on specific corners */
+.rounded-2rem-corners {
+  border-top-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+/* --- Section Wrapper --- */
+.about-section {
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.about-container {
+  max-width: 1140px;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* --- Main Title --- */
+.about-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 300;
+  margin-bottom: 50px;
+  color: #4a4a4a;
+}
+
+/* --- Main Content Grid --- */
+.about-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* --- Left Column (Image Cards) --- */
+.about-left-column {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+
+.info-card {
+  flex: 1;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 250px;
+  object-fit: cover;
+
+}
+
+.info-card-body {
+  background-color: #F7F7F7;
+  padding: 25px 15px;
+}
+
+.info-card-body h3 {
+  margin: 0 0 10px 0;
+  font-size: 17px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #111;
+}
+
+.underline-accent {
+  width: 70px;
+  height: 4px;
+  background-color: #eab308;
+  /* Gold/Yellow Accent */
+  margin: 0 auto;
+}
+
+/* --- Right Column (Navigation Menu) --- */
+.about-right-column {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.side-navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.side-navigation li {
+  border-bottom: 1px solid #ebebeb;
+}
+
+.side-navigation li:last-child {
+  border-bottom: none;
+}
+
+.side-navigation a {
+  display: block;
+  padding: 20px 0;
+  text-decoration: none;
+  color: #4a4a4a;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.side-navigation a:hover {
+  color: #eab308;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+  .about-content-wrapper {
+    flex-direction: column;
+  }
+
+  .about-right-column {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-left-column {
+    flex-direction: column;
+  }
+
+  .about-title {
+    font-size: 22px;
+  }
+}
+
+.vision-text {
+  font-family: 'Playfair Display', serif;
+}
+
+.playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.input-line {
+  border-bottom: 2px solid black;
+  /* A subtle gray line for the input fields */
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-line:focus {
+  border-color: black;
+  /* A black border on focus */
+}
+
+
+/* Custom color classes using the specified hex codes */
+.text-custom-yellow {
+  color: #eab308;
+}
+
+.bg-custom-yellow {
+  background-color: #eab308;
+}
+
+.text-custom-blue {
+  color: #0b2369;
+}
+
+.bg-custom-dark-blue {
+  background-color: #122146;
+}
+
+.text-custom-light-gray {
+  color: #e5e5e5;
+}
+
+.btn-hover:hover {
+  background-color: #d4a307;
+}
+
+/* Explicit CSS class for the button hover effect */
+.contact-button {
+  background-color: #eab308;
+  color: #ffffff;
+  font-weight: 600;
+  transition-property: background-color, color;
+  transition-duration: 200ms;
+}
+
+.contact-button:hover {
+  background-color: #0b2369;
+  color: #eab308;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Define grid auto rows to control the base height of grid rows */
+.gallery-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* Responsive columns */
+  grid-auto-rows: 250px;
+  /* Fixed height for each row */
+  gap: 1rem;
+  /* Gap between grid items */
+}
+
+/* Specific spans for layout as seen in screenshots */
+/* For images that span two rows vertically */
+.row-span-2 {
+  grid-row: span 2 / span 2;
+}
+
+/* For images that span two columns horizontally */
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (min-width: 768px) {
+  .md\\:col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+
+  .md\\:row-span-1 {
+    grid-row: span 1 / span 1;
+  }
+
+  .md\\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
+  .md\\:row-span-2 {
+    grid-row: span 2 / span 2;
+  }
+
+  .gallery-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns on medium screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\\:col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+
+  .lg\\:row-span-1 {
+    grid-row: span 1 / span 1;
+  }
+
+  .lg\\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
+  .lg\\:row-span-2 {
+    grid-row: span 2 / span 2;
+  }
+
+  .gallery-grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    /* Adjust if a 3-column layout is desired on large screens */
+  }
+}
+
+.text-custom-blue {
+  color: #0b2369;
+}
+
+
+.border-custom-yellow {
+  border-color: #eab308;
+}
+
+.bg-custom-yellow {
+  background-color: #eab308;
+}

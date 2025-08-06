@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Assets/favicon.png">
+    <title>HOMEPAGE</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Css Link -->
+    <link rel="stylesheet" href="Css/style.css">
+    <!-- Google Fonts: Barlow (Alternative for Din Neuzeit Grotesk) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="bg-[#0B2369] shadow-lg font-sans relative">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Main navigation bar content. The logo and links are now grouped. -->
+            <div class="flex items-center justify-between md:justify-center h-28">
+                <!-- Grouping of Logo, Nav Links, and Donate Button -->
+                <div class="flex items-center space-x-12">
+                    <!-- Logo -->
+                    <div>
+                        <a href="index.html" class="flex items-center space-x-2 text-white">
+                            <img class="h-16 w-auto" src="Assets/kamlogo.png" alt="Logo">
+                        </a>
+                    </div>
+
+                    <!-- Desktop Menu Links, Contact, and Donate Button -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <!-- 'Who We Are' Dropdown Trigger -->
+                        <div class="group relative" data-dropdown-id="who-we-are-dropdown">
+                            <a href="#"
+                                class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Who
+                                We
+                                Are</a>
+                        </div>
+
+                        <!-- 'What We Do' Dropdown Trigger -->
+                        <div class="group relative" data-dropdown-id="what-we-do-dropdown">
+                            <a href="#"
+                                class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">What
+                                We Do</a>
+                        </div>
+
+                        <!-- 'Get Involved' Dropdown Trigger -->
+                        <div class="group relative" data-dropdown-id="get-involved-dropdown">
+                            <a href="#"
+                                class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Get
+                                Involved</a>
+                        </div>
+
+                        <!-- Other Links -->
+                        <a href="Resources.html"
+                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Resources</a>
+
+                        <!-- 'Contact' link, now without a dropdown -->
+                        <a href="Contact.html"
+                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Contact</a>
+
+                        <!-- Donate Button -->
+                        <div>
+                            <!-- Using custom hex colors for background and hover effect -->
+                            <a href="Contact.html"
+                                class="inline-block bg-[#F7D57F] text-[#0B2369] font-light font-semibold py-3 px-8 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300 text-lg">
+                                Donate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-[#F7D57F] hover:bg-[#1A3B8A] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Icon for menu (hamburger) -->
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- "Who We Are" Full-Width Dropdown Menu (Desktop) -->
+        <div id="who-we-are-dropdown"
+            class="desktop-dropdown-links absolute inset-x-0 top-full hidden bg-[#0B2369] shadow-lg z-40 py-8 h-64">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-start justify-between text-white space-x-4">
+                    <!-- Links -->
+                    <div class="flex-grow grid grid-cols-2 gap-x-12 gap-y-4 font-semibold text-xl">
+                        <!-- Added nav-link-underline class to each link -->
+                        <a href="vision.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">OUR
+                            VISION</a>
+                        <a href="Values.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">OUR
+                            VALUES</a>
+                        <a href="Statement.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">STATEMENT
+                            OF FAITH</a>
+                        <a href="Team.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">LEADERSHIP
+                            TEAM</a>
+                    </div>
+                    <!-- Buttons/Images -->
+                    <div class="flex flex-col flex-shrink-0">
+                        <!-- CONTACT US Button (with the new left-arrow-head style) -->
+                        <div class="relative inline-block mb-16">
+                            <!-- Floating Image -->
+                            <img src="Team/IMMACULE KAM.jpg" alt="Connect Us"
+                                class="absolute left-[1rem] top-1/2 transform -translate-y-1/2 h-20 w-20 object-cover z-20">
+
+                            <!-- Button Background with arrow shape on the left side -->
+                            <a href="Contact.html"
+                                class="btn-left-arrow-head flex items-center bg-[#F7D57F] hover:bg-[#E6C46E] transition-colors py-3 pl-14 pr-8 shadow-md relative z-10 ml-[6rem]">
+                                <span class="text-[#0B2369] font-bold text-base uppercase tracking-wide">
+                                    Contact Us
+                                </span>
+                            </a>
+                        </div>
+
+                        <!-- ABOUT US Button (with the new left-arrow-head style) -->
+                        <div class="relative inline-block">
+                            <!-- Floating Image -->
+                            <img src="Team/P4 (1).jpg" alt="About Us"
+                                class="absolute left-[1rem] top-1/2 transform -translate-y-1/2 h-20 w-20 object-cover z-20">
+
+                            <!-- Button Background with arrow shape on the left side -->
+                            <a href="about.html"
+                                class="btn-left-arrow-head flex items-center bg-[#F7D57F] hover:bg-[#E6C46E] transition-colors py-3 pl-14 pr-8 shadow-md relative z-10 ml-[6rem]">
+                                <span class="text-[#0B2369] font-bold text-base uppercase tracking-wide">
+                                    About Us
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- "What We Do" Full-Width Dropdown Menu (Desktop) -->
+        <div id="what-we-do-dropdown"
+            class="desktop-dropdown-links absolute inset-x-0 top-full hidden bg-[#0B2369] shadow-lg z-40 py-8 h-64">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 gap-x-12 text-white items-start">
+                    <!-- Left Column with 4 Links -->
+                    <div class="flex flex-col space-y-4 font-semibold text-xl">
+                        <!-- Added nav-link-underline class to each link -->
+                        <a href="Goafrica.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">GO
+                            AFRICA</a>
+                        <a href="Mercy.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">MERCY
+                            MINISTRY</a>
+                        <a href="Impact.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">IMPACT
+                            THE WORLD</a>
+                        <a href="wondermas.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">WONDERMAS
+                            CHILD PROGRAM</a>
+                    </div>
+                    <!-- Right Column with 2 Links -->
+                    <div class="flex flex-col space-y-4 font-semibold text-xl">
+                        <!-- Added nav-link-underline class to each link -->
+                        <a href="Reachout.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200 uppercase">REACHING
+                            OUT TO COMMUNITIES FOR CHRIST</a>
+                        <a href="Training.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200 uppercase">TRAINING,
+                            EQUIPPING CHURCHES FOR MISSIONS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- "Get Involved" Full-Width Dropdown Menu (Desktop) -->
+        <div id="get-involved-dropdown"
+            class="desktop-dropdown-links absolute inset-x-0 top-full hidden bg-[#0B2369] shadow-lg z-40 py-8 h-64">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 gap-x-12 text-white items-start">
+                    <!-- Left Column with 4 Links -->
+                    <div class="flex flex-col space-y-4 font-semibold text-xl">
+                        <!-- Added nav-link-underline class to each link -->
+                        <a href="Volunteer.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">VOLUNTEER</a>
+                        <a href="Pray.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">PRAY</a>
+                        <a href="Training.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">TRAIN</a>
+                        <a href="#"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">GIVE</a>
+                    </div>
+                    <!-- Right Column with 1 Link -->
+                    <div class="flex flex-col space-y-4 font-semibold text-xl">
+                        <!-- Added nav-link-underline class to the link -->
+                        <a href="Events.html"
+                            class="nav-link-underline hover:text-[#F7D57F] transition-colors duration-200">EVENT</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu, show/hide based on menu state. -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-2 sm:px-3">
+
+                <!-- Mobile Dropdown for 'Who We Are' -->
+                <div class="mobile-dropdown-toggle-container">
+                    <button
+                        class="w-full text-left text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-xl font-semibold">Who
+                        We Are</button>
+                    <div class="mobile-dropdown-links hidden pl-6 pt-2 space-y-2">
+                        <a href="vision.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">OUR
+                            VISION</a>
+                        <a href="Values.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">OUR
+                            VALUES</a>
+                        <a href="Statement.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">STATEMENT
+                            OF FAITH</a>
+                        <a href="Team.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">LEADERSHIP
+                            TEAM</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Dropdown for 'What We Do' -->
+                <div class="mobile-dropdown-toggle-container">
+                    <button
+                        class="w-full text-left text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-xl font-semibold">What
+                        We Do</button>
+                    <div class="mobile-dropdown-links hidden pl-6 pt-2 space-y-2">
+                        <a href="Goafrica.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">GO
+                            AFRICA</a>
+                        <a href="Mercy.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">MERCY
+                            MINISTRY</a>
+                        <a href="Impact.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">IMPACT
+                            THE WORLD</a>
+                        <a href="wondermas.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">WONDERMAS
+                            CHILD PROGRAM</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Dropdown for 'Get Involved' -->
+                <div class="mobile-dropdown-toggle-container">
+                    <button
+                        class="w-full text-left text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-xl font-semibold">Get
+                        Involved</button>
+                    <div class="mobile-dropdown-links hidden pl-6 pt-2 space-y-2">
+                        <a href="Volunteer.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">VOLUNTEER</a>
+                        <a href="Pray.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">PRAY</a>
+                        <a href="Training.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">TRAIN</a>
+                        <a href="#"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">GIVE</a>
+                        <a href="Event.html"
+                            class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-lg">EVENT</a>
+                    </div>
+                </div>
+
+                <!-- Regular mobile links -->
+                <a href="Resources.html"
+                    class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-xl font-semibold">Resources</a>
+                <a href="Contact.html"
+                    class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-xl font-semibold">Contact</a>
+                <div class="mt-4 px-2">
+                    <a href="#"
+                        class="inline-block w-full text-center bg-[#F7D57F] text-[#0B2369] font-light py-3 px-8 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300">
+                        Donate
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Image Slideshow Section -->
+    <section class="relative w-full overflow-hidden">
+        <!-- The slideshow container holds all the slides and hides the overflow -->
+        <div class="slideshow-container">
+            <!-- The slideshow-inner is the movable element that holds all the slides -->
+            <div class="slideshow-inner">
+                <!-- Slide 1 -->
+                <div class="mySlides">
+                    <!-- Replace the placeholder URL with your image URL -->
+                    <img src="Assets/slide1.avif" alt="Image 1">
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="mySlides">
+                    <!-- Replace the placeholder URL with your image URL -->
+                    <img src="Assets/slide2.avif" alt="Image 2">
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="mySlides">
+                    <!-- Replace the placeholder URL with your image URL -->
+                    <img src="Assets/slide3.avif" alt="Image 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- FIND OUT MORE SECTION -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <!-- Container with a smaller max-w-5xl to make the cards smaller -->
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+            <!-- Section Button, now centered with square corners and a new hover effect -->
+            <div class="text-center mb-12">
+                <a href="about.html"
+                    class="inline-block bg-[#0B2369] text-white font-bold uppercase tracking-wide py-3 px-8 hover:bg-[#F7D57F] hover:text-[#0B2369] transition-colors duration-300">
+                    Find Out More
+                </a>
+            </div>
+
+            <!-- Three-column layout for the cards -->
+            <div class="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
+
+                <!-- Card 1: REACH OUT TO COMMUNITIES FOR JESUS -->
+                <!-- The border-radius class `rounded-xl` has been removed, and a solid blue bottom border has been added -->
+                <div
+                    class="flex-1 shadow-lg overflow-hidden bg-white hover:bg-[#F7D57F] transition-all duration-300 hover:scale-105 border-b-4 border-[#0B2369]">
+                    <!-- Image container with reduced height classes -->
+                    <div class="relative w-full h-40 md:h-56 lg:h-72">
+                        <!-- Placeholder image (replace with your actual image) -->
+                        <img src="Assets/Community-Services-e1723751046325.jpg" alt="Man giving a box to someone"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <!-- Text Box -->
+                    <div class="p-4">
+                        <!-- Applying the hover class directly to the heading text -->
+                        <h3
+                            class="text-lg md:text-xl text-center font-bold tracking-wide text-gray-800 uppercase hover:text-[#0B2369] transition-colors duration-300">
+                            Reach Out To Communities For Jesus
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Card 2: TRAINING, EQUIPPING CHURCHES FOR MISSION -->
+                <!-- The border-radius class `rounded-xl` has been removed, and a solid blue bottom border has been added -->
+                <div
+                    class="flex-1 shadow-lg overflow-hidden bg-white hover:bg-[#F7D57F] transition-all duration-300 hover:scale-105 border-b-4 border-[#0B2369]">
+                    <!-- Image container with reduced height classes -->
+                    <div class="relative w-full h-40 md:h-56 lg:h-72">
+                        <!-- Placeholder image (replace with your actual image) -->
+                        <img src="Assets/train-grow-launching-160229-13.avif" alt="Two men in a meeting"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <!-- Text Box -->
+                    <div class="p-4">
+                        <!-- Applying the hover class directly to the heading text -->
+                        <h3
+                            class="text-lg md:text-xl text-center font-bold tracking-wide text-gray-800 uppercase hover:text-[#0B2369] transition-colors duration-300">
+                            Training, Equipping Churches For Mission And Transformational Leadership
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Card 3: IMPACT THE WORLD -->
+                <!-- The border-radius class `rounded-xl` has been removed, and a solid blue bottom border has been added -->
+                <div
+                    class="flex-1 shadow-lg overflow-hidden bg-white hover:bg-[#F7D57F] transition-all duration-300 hover:scale-105 border-b-4 border-[#0B2369]">
+                    <!-- Image container with reduced height classes -->
+                    <div class="relative w-full h-40 md:h-56 lg:h-72">
+                        <!-- Placeholder image (replace with your actual image) -->
+                        <img src="Assets/IMPACT THE WORLD.jpg" alt="Hands holding a bible with a globe"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <!-- Text Box -->
+                    <div class="p-4">
+                        <!-- Applying the hover class directly to the heading text -->
+                        <h3
+                            class="text-lg md:text-xl text-center font-bold tracking-wide text-gray-800 uppercase hover:text-[#0B2369] transition-colors duration-300">
+                            Impact The World
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- MISSION STATEMENT SECTION -->
+    <section
+        class="flex flex-col items-center justify-center min-h-screen bg-[#C0C6D7] py-16 px-4 sm:px-8 lg:px-16 space-y-8">
+        <!-- Text Overlay -->
+        <!-- Removed margin-bottom from this div since space-y-8 now handles the spacing -->
+        <div class="container mx-auto text-center">
+            <h1
+                class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight max-w-6xl mx-auto text-white">
+                We partner with the local church to share the gospel and equip everyday believers to boldly and lovingly
+                bring the hope of Christ to those who need it most.
+            </h1>
+        </div>
+
+        <!-- Video Container -->
+        <!-- The max-w has been reduced, and the rounded corners have been removed. -->
+        <div
+            class="relative w-full max-w-4xl mx-auto aspect-video bg-black/75 overflow-hidden shadow-2xl flex items-center justify-center">
+            <!-- The iframe's height is now 100%, filling the container vertically, while the width is kept at 95% for side spacing. -->
+            <iframe
+                src="https://player.vimeo.com/video/1077688378?h=65e9686bc8&color=ffffff&title=0&byline=0&portrait=0"
+                width="95%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+
+    <section class="flex flex-col lg:flex-row items-center justify-center bg-white py-16 px-4 sm:px-8 lg:px-16">
+        <!-- Image Column -->
+        <div class="w-full lg:w-1/2 flex justify-center mb-8 lg:mb-0 lg:pr-12">
+            <!-- Image container with fixed height and responsive width, and the custom yellow shadow -->
+            <div class="relative w-full h-[32rem] p-4 yellow-shadow overflow-hidden">
+                <!-- Placeholder image that will cover the container -->
+                <img src="Team/FH7A0078.jpg" alt="Image of people in the mission" class="w-full h-full object-cover">
+            </div>
+        </div>
+
+        <!-- Text Column with added left padding -->
+        <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left lg:pl-12">
+            <!-- Increased top margin with mt-12, text is bold -->
+            <h2 class="text-[30px] font-bold text-[#646363] leading-relaxed mb-6 max-w-2xl underline-kam-yellow mt-12">
+                KINGDOM AMBASSADORS MISSIONS IS A FAITH-DRIVEN MOVEMENT EQUIPPING BELIEVERS TO DISCOVER THEIR IDENTITY
+                AND
+                PURPOSE IN CHRIST.<br>
+                FOUNDED BY PATRICK NSANZAMAHORO, THE MISSION IS ROOTED IN JEREMIAH 1:5—CALLING PEOPLE TO LIVE BOLDLY AS
+                GOD’S REPRESENTATIVES ON EARTH.
+            </h2>
+
+            <!-- Button with hover effect -->
+            <a href="Ourstory.html"
+                class="bg-[var(--kam-blue)] text-white font-bold py-3 px-6 shadow-lg transition-colors duration-200 transform hover:scale-105 hover:bg-[var(--kam-yellow)] hover:text-[var(--kam-blue)]">
+                Read Our Story
+            </a>
+        </div>
+    </section>
+
+
+
+    <!-- GET INSPIRED SECTION -->
+    <section class="kam-dark-blue text-white py-16 px-4">
+        <!-- Section Title with left alignment -->
+        <div class="container mx-auto mb-12">
+            <!-- New wrapper to match the card image alignment -->
+            <div class="w-full mx-auto">
+                <h2 class="text-4xl font-bold text-left">Get Inspired</h2>
+            </div>
+        </div>
+
+        <!-- Cards Container -->
+        <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+
+            <!-- Card 1 Container (relative parent for positioning) and the group for hover effects -->
+            <div class="relative group">
+                <!-- Image Card -->
+                <div class="overflow-hidden shadow-lg w-full mx-auto relative z-10">
+                    <img src="Assets/Inspire me.avif" alt="A woman in a conversation"
+                        class="w-full h-[20rem] object-cover">
+                </div>
+                <!-- Title Overlay (positioned outside the card) with hover background color -->
+                <div
+                    class="absolute bottom-0 inset-x-0 mx-auto -mb-4 z-20 w-[90%] bg-white p-4 shadow-xl transition-colors duration-300 group-hover:bg-black">
+                    <!-- h3 with new font size, inline style, and hover text color -->
+                    <h3 class="font-semibold text-blue-600 transition-colors duration-300 group-hover:text-yellow-400 text-center whitespace-nowrap overflow-hidden text-ellipsis"
+                        style="font-size: 15px;">INSPIRE ME PROGRAM</h3>
+                </div>
+            </div>
+
+            <!-- Card 2 Container -->
+            <div class="relative group">
+                <!-- Image Card -->
+                <div class="overflow-hidden shadow-lg w-full mx-auto relative z-10">
+                    <img src="Assets/download.png" alt="A group of people looking at a laptop"
+                        class="w-full h-[20rem] object-cover">
+                </div>
+                <!-- Title Overlay -->
+                <div
+                    class="absolute bottom-0 inset-x-0 mx-auto -mb-4 z-20 w-[90%] bg-white p-4 shadow-xl transition-colors duration-300 group-hover:bg-black">
+                    <!-- h3 with new font size, inline style, and hover text color -->
+                    <h3 class="font-semibold text-blue-600 transition-colors duration-300 group-hover:text-yellow-400 text-center whitespace-nowrap overflow-hidden text-ellipsis"
+                        style="font-size: 15px;">GO AFRICA</h3>
+                </div>
+            </div>
+
+            <!-- Card 3 Container -->
+            <div class="relative group">
+                <!-- Image Card -->
+                <div class="overflow-hidden shadow-lg w-full mx-auto relative z-10">
+                    <img src="Assets/wondermas.png" alt="Children running happily"
+                        class="w-full h-[20rem] object-cover">
+                </div>
+                <!-- Title Overlay -->
+                <div
+                    class="absolute bottom-0 inset-x-0 mx-auto -mb-4 z-20 w-[90%] bg-white p-4 shadow-xl transition-colors duration-300 group-hover:bg-black">
+                    <!-- h3 with new font size, inline style, and hover text color -->
+                    <h3 class="font-semibold text-blue-600 transition-colors duration-300 group-hover:text-yellow-400 text-center whitespace-nowrap overflow-hidden text-ellipsis"
+                        style="font-size: 15px;">WONDERMAS CHILD PROJECT</h3>
+                </div>
+            </div>
+
+            <!-- Card 4 Container -->
+            <div class="relative group">
+                <!-- Image Card -->
+                <div class="overflow-hidden shadow-lg w-full mx-auto relative z-10">
+                    <img src="Assets/Mercy.png" alt="A person stacking boxes" class="w-full h-[20rem] object-cover">
+                </div>
+                <!-- Title Overlay -->
+                <div
+                    class="absolute bottom-0 inset-x-0 mx-auto -mb-4 z-20 w-[90%] bg-white p-4 shadow-xl transition-colors duration-300 group-hover:bg-black">
+                    <!-- h3 with new font size, inline style, and hover text color -->
+                    <h3 class="font-semibold text-blue-600 transition-colors duration-300 group-hover:text-yellow-400 text-center whitespace-nowrap overflow-hidden text-ellipsis"
+                        style="font-size: 15px;">MERCY MINISTRY</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Upcoming Events Section Container -->
+    <section class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <!-- Section Title -->
+        <div class="text-left mb-12">
+            <h2 class="text-4xl font-bold text-gray-800">Up Coming Events</h2>
+        </div>
+
+        <!-- Events Cards Container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Event 1 -->
+            <div class="flex flex-col h-full">
+                <!-- Image -->
+                <img src="Assets/Evangelism.avif" alt="Group of people talking" class="w-full h-56 object-cover">
+                <!-- Title container with fixed height and centered content -->
+                <div class="text-center mx-auto max-w-xs bg-gray-200 mb-6 h-20 flex items-center justify-center">
+                    <h3 class="text-2xl font-semibold text-gray-800 p-2">Evangelism Training and Outreach Weekend</h3>
+                </div>
+                <!-- Button container with padding for spacing -->
+                <div class="px-6 pb-6 text-center flex-grow flex flex-col justify-between">
+                    <a href="#"
+                        class="inline-block kam-dark-blue-button text-white font-medium text-sm py-2 px-4 transition-colors duration-300 hover:bg-yellow-500 hover:text-gray-900 max-w-[200px] mx-auto">
+                        LEARN MORE
+                    </a>
+                </div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="flex flex-col h-full">
+                <!-- Image -->
+                <img src="Assets/purpose.avif" alt="Group of young people studying together"
+                    class="w-full h-56 object-cover">
+                <!-- Title container with fixed height and centered content -->
+                <div class="text-center mx-auto max-w-xs bg-gray-200 mb-6 h-20 flex items-center justify-center">
+                    <h3 class="text-2xl font-semibold text-gray-800 p-2">Discover Purpose Youth Retreat</h3>
+                </div>
+                <!-- Button container with padding for spacing -->
+                <div class="px-6 pb-6 text-center flex-grow flex flex-col justify-between">
+                    <a href="#"
+                        class="inline-block kam-dark-blue-button text-white font-medium text-sm py-2 px-4 transition-colors duration-300 hover:bg-yellow-500 hover:text-gray-900 max-w-[200px] mx-auto">
+                        LEARN MORE
+                    </a>
+                </div>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="flex flex-col h-full">
+                <!-- Image -->
+                <img src="Assets/player summit.avif" alt="Hands raised in prayer" class="w-full h-56 object-cover">
+                <!-- Title container with fixed height and centered content -->
+                <div class="text-center mx-auto max-w-xs bg-gray-200 mb-6 h-20 flex items-center justify-center">
+                    <h3 class="text-2xl font-semibold text-gray-800 p-2">Kingdom Builders Prayer Summit</h3>
+                </div>
+                <!-- Button container with padding for spacing -->
+                <div class="px-6 pb-6 text-center flex-grow flex flex-col justify-between">
+                    <a href="#"
+                        class="inline-block kam-dark-blue-button text-white font-medium text-sm py-2 px-4 transition-colors duration-300 hover:bg-yellow-500 hover:text-gray-900 max-w-[200px] mx-auto">
+                        LEARN MORE
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Main Section Container now with full width and increased padding -->
+    <div class="bg-gradient-to-r from-blue-900 to-indigo-900 p-8 shadow-xl w-full">
+        <!-- Inner content container, centered and with a max-w-6xl -->
+        <div class="flex flex-col md:flex-row overflow-hidden shadow-lg max-w-6xl mx-auto h-[500px] my-12">
+
+            <!-- Left Side: Image container (1/3 width on medium screens) -->
+            <div class="w-full md:w-1/3 h-full">
+                <img src="Assets/phone.jpg" alt="Placeholder image" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Right Side: Subscription Form with white background (2/3 width on medium screens) -->
+            <div class="w-full md:w-2/3 bg-white p-6 md:p-12 flex flex-col justify-center">
+                <!-- Inner container to reduce the content width and center it -->
+                <div class="max-w-lg mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-yellow-500">
+                        Be the first to know
+                    </h2>
+                    <p class="text-gray-600 mb-12 leading-relaxed">
+                        Subscribe to receive faith-filled insights, empowering teachings, and updates on how you can
+                        grow in
+                        your identity, purpose, and Kingdom impact.
+                    </p>
+
+                    <!-- Subscription Form -->
+                    <form class="w-full flex flex-col items-start">
+                        <!-- Label for the email input field -->
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                            Email
+                        </label>
+                        <input type="email" id="email" name="email" required
+                            class="w-96 py-2.5 px-6 bg-gray-100 border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm mb-4">
+
+                        <button type="submit"
+                            class="w-96 py-2.5 px-6 bg-yellow-500 hover:text-yellow-400 hover:bg-[#0b2369] text-black font-semibold shadow-lg transition-colors duration-300 text-xl">
+                            Sign Up
+                        </button>
+                    </form>
+
+                    <p class="text-xs text-gray-500 mt-6 mb-4">
+                        Your data is kept secure in line with our privacy policy. You can opt out anytime by contacting
+                        our
+                        team. For full details on how we use your data, please visit our privacy page.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- GET INVOLVED SECTION -->
+    <section class="bg-[#0A133E] text-white py-16 px-4">
+        <!-- Section Title with left alignment -->
+        <div class="container mx-auto mb-12">
+            <!-- New wrapper to match the card image alignment -->
+            <div class="w-full mx-auto">
+                <h2 class="text-4xl font-bold text-left">Get Involved</h2>
+            </div>
+        </div>
+
+        <!-- Cards Container -->
+        <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-8">
+
+            <!-- Card 1 Container (relative parent for positioning) and the group for hover effects -->
+            <div
+                class="relative group z-10 hover:scale-105 hover:z-50 transition-all duration-300 ease-in-out hover:-translate-y-2">
+                <!-- Image Card -->
+                <div class="overflow-hidden shadow-lg w-full mx-auto relative">
+                    <!-- Placeholder image with alt text -->
+                    <img src="Assets/Praying In a Church.avif" alt="A woman in a conversation"
+                        class="w-full h-[20rem] object-cover">
+                </div>
+                <!-- Title Overlay (positioned outside the card) with hover background color and updated width -->
+                <div
+                    class="absolute bottom-0 inset-x-0 mx-auto -mb-4 w-[50%] bg-white p-4 shadow-xl transition-colors duration-300 group-hover:bg-yellow-500 rounded-2rem-corners">
+                    <!-- h3 with new font size, inline style, and hover text color -->
+                    <h3
+                        class="font-semibold text-blue-600 transition-colors duration-300 group-hover:text-gray-900 text-center whitespace-nowrap overflow-hidden text-ellipsis text-base">
+                        Pray
+                    </h3>
+                </div>
+            </div>
+
+            <!-- Card 2 Container -->
+            <div
+                class="relative group z-10 hover:scale-105 hover:z-50 transition-all duration-300 ease-in-out hover:-translate-y-2">
+                <!-- Image Card -->
+                <div class="overflow-hidden shadow-lg w-full mx-auto relative">
+                    <!-- Placeholder image with alt text -->
+                    <img src="Assets/Give.avif" alt="A group of people looking at a laptop"
+                        class="w-full h-[20rem] object-cover">
+                </div>
+                <!-- Title Overlay with updated width and radius -->
+                <div
+                    class="absolute bottom-0 inset-x-0 mx-auto -mb-4 w-[50%] bg-white p-4 shadow-xl transition-colors duration-300 group-hover:bg-yellow-500 rounded-2rem-corners">
+                    <!-- h3 with new font size, inline style, and hover text color -->
+                    <h3
+                        class="font-semibold text-blue-600 transition-colors duration-300 group-hover:text-gray-900 text-center whitespace-nowrap overflow-hidden text-ellipsis text-base">
+                        Give
+                    </h3>
+                </div>
+            </div>
+
+            <!-- Card 3 Container -->
+            <div
+                class="relative group z-10 hover:scale-105 hover:z-50 transition-all duration-300 ease-in-out hover:-translate-y-2">
+                <!-- Image Card -->
+                <div class="overflow-hidden shadow-lg w-full mx-auto relative">
+                    <!-- Placeholder image with alt text -->
+                    <img src="Assets/Get Trained.avif" alt="Children running happily"
+                        class="w-full h-[20rem] object-cover">
+                </div>
+                <!-- Title Overlay with updated width and radius -->
+                <div
+                    class="absolute bottom-0 inset-x-0 mx-auto -mb-4 w-[50%] bg-white p-4 shadow-xl transition-colors duration-300 group-hover:bg-yellow-500 rounded-2rem-corners">
+                    <!-- h3 with new font size, inline style, and hover text color -->
+                    <h3
+                        class="font-semibold text-blue-600 transition-colors duration-300 group-hover:text-gray-900 text-center whitespace-nowrap overflow-hidden text-ellipsis text-base">
+                        Get Trained
+                    </h3>
+                </div>
+            </div>
+
+            <!-- Card 4 Container -->
+            <div
+                class="relative group z-10 hover:scale-105 hover:z-50 transition-all duration-300 ease-in-out hover:-translate-y-2">
+                <!-- Image Card -->
+                <div class="overflow-hidden shadow-lg w-full mx-auto relative">
+                    <!-- Placeholder image with alt text -->
+                    <img src="Assets/volunteer.avif" alt="A person stacking boxes"
+                        class="w-full h-[20rem] object-cover">
+                </div>
+                <!-- Title Overlay with updated width and radius -->
+                <div
+                    class="absolute bottom-0 inset-x-0 mx-auto -mb-4 w-[50%] bg-white p-4 shadow-xl transition-colors duration-300 group-hover:bg-yellow-500 rounded-2rem-corners">
+                    <!-- h3 with new font size, inline style, and hover text color -->
+                    <h3
+                        class="font-semibold text-blue-600 transition-colors duration-300 group-hover:text-gray-900 text-center whitespace-nowrap overflow-hidden text-ellipsis text-base">
+                        Volunteer
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer Section -->
+    <footer class="bg-[#C8A25F] text-[#0A133E] py-16 px-4">
+        <div class="container mx-auto">
+            <!-- Footer main content grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center sm:text-left items-center">
+                <div class="flex flex-col items-center sm:items-start">
+                    <a href="index.html">
+                        <img src="Assets/KAM LOGO.png" alt="KAM Logo" class="max-w-[10rem]" />
+                        <p class="text-lg text-center mt-[-30px]">Kingdom Ambassadors <br>Missions</p>
+                    </a>
+                </div>
+
+                <!-- Useful Links -->
+                <div class="flex flex-col items-center sm:items-start justify-center">
+                    <h4 class="text-xl font-bold mb-4">Useful Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="Inspire.html" class="hover:underline">Get Inspired</a></li>
+                        <li><a href="Contact.html" class="hover:underline">Donate</a></li>
+                        <li><a href="about.html" class="hover:underline">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="flex flex-col items-center sm:items-start justify-center">
+                    <h4 class="text-xl font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li><strong>Address:</strong> Kigali, Rwanda</li>
+                        <li><strong>Tel:</strong> (250) 785-026-813</li>
+                        <li><strong>Email:</strong> info@kam.org</li>
+                    </ul>
+                </div>
+
+                <!-- Follow -->
+                <div class="flex flex-col items-center sm:items-start justify-center">
+                    <h4 class="text-xl font-bold mb-4">Follow</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">Press & Media</a></li>
+                        <li><a href="#" class="hover:underline">Instagram</a></li>
+                        <li><a href="#" class="hover:underline">Twitter/X</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright notice -->
+            <div class="border-t border-[#0A133E] mt-12 pt-8 text-center text-sm">
+                © By INA Hub
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="Js/main.js"></script>
+
+</body>
+
+</html>
