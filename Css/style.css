@@ -342,6 +342,12 @@ body {
   color: #eab308;
 }
 
+/* Custom spacing for footer links */
+.footer-link-spacing li a {
+  letter-spacing: 0.15em;
+  line-height: 1.2em;
+}
+
 .gallery-image {
   width: 100%;
   height: 100%;

@@ -25,63 +25,21 @@
     <header class="bg-[#0B2369] shadow-lg font-sans relative">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Main navigation bar content. The logo, donate button (mobile), and links/hamburger are now grouped. -->
-            <div class="flex items-center justify-between h-36"> <!-- justify-between for mobile -->
-                <!-- Logo -->
+            <!-- This div is for the mobile layout and remains unchanged -->
+            <div class="flex items-center justify-between h-36 md:hidden">
+                <!-- Logo (Mobile) -->
                 <div>
                     <a href="index.html" class="flex items-center space-x-2 text-white">
-                        <img class="h-24 md:h-32 w-auto" src="Assets/kamlogo.png" alt="Logo">
+                        <img class="h-24 w-auto" src="Assets/kamlogo.png" alt="Logo">
                     </a>
                 </div>
 
-                <!-- Donate Button (Visible on mobile, hidden on desktop) -->
+                <!-- Donate Button (Mobile) -->
                 <div class="md:hidden">
                     <a href="Contact.html"
                         class="inline-block bg-[#F7D57F] text-[#0B2369] font-light font-semibold py-3 px-6 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300 text-lg">
                         Donate
                     </a>
-                </div>
-
-                <!-- Desktop Menu Links, Contact, and Donate Button (Hidden on mobile, visible on desktop) -->
-                <div class="hidden md:flex items-center justify-center space-x-8">
-                    <!-- md:justify-center for desktop -->
-                    <!-- 'Who We Are' Dropdown Trigger -->
-                    <div class="group relative" data-dropdown-id="who-we-are-dropdown">
-                        <a href="#"
-                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Who
-                            We
-                            Are</a>
-                    </div>
-
-                    <!-- 'What We Do' Dropdown Trigger -->
-                    <div class="group relative" data-dropdown-id="what-we-do-dropdown">
-                        <a href="#"
-                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">What
-                            We Do</a>
-                    </div>
-
-                    <!-- 'Get Involved' Dropdown Trigger -->
-                    <div class="group relative" data-dropdown-id="get-involved-dropdown">
-                        <a href="#"
-                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Get
-                            Involved</a>
-                    </div>
-
-                    <!-- Other Links -->
-                    <a href="Resources.html"
-                        class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Resources</a>
-
-                    <!-- 'Contact' link, now without a dropdown -->
-                    <a href="Contact.html"
-                        class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Contact</a>
-
-                    <!-- Donate Button (Desktop version) -->
-                    <div>
-                        <!-- Using custom hex colors for background and hover effect -->
-                        <a href="Contact.html"
-                            class="inline-block bg-[#F7D57F] text-[#0B2369] font-light font-semibold py-3 px-8 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300 text-lg">
-                            Donate
-                        </a>
-                    </div>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -96,6 +54,60 @@
                                 d="M4 6h16M4 12h16m-7 6h7" />
                         </svg>
                     </button>
+                </div>
+            </div>
+
+            <!-- This new div is for the desktop layout, which is now centered -->
+            <div class="hidden md:flex items-center justify-center h-36">
+                <!-- Container to hold the centered content and apply spacing -->
+                <div class="flex items-center space-x-8">
+                    <!-- Logo (Desktop) -->
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="flex items-center space-x-2 text-white">
+                            <img class="h-32 w-auto" src="Assets/kamlogo.png" alt="Logo">
+                        </a>
+                    </div>
+                    <!-- Desktop Menu Links -->
+                    <div class="flex items-center justify-center space-x-8">
+                        <!-- 'Who We Are' Dropdown Trigger -->
+                        <div class="group relative" data-dropdown-id="who-we-are-dropdown">
+                            <a href="#"
+                                class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Who
+                                We
+                                Are</a>
+                        </div>
+
+                        <!-- 'What We Do' Dropdown Trigger -->
+                        <div class="group relative" data-dropdown-id="what-we-do-dropdown">
+                            <a href="#"
+                                class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">What
+                                We Do</a>
+                        </div>
+
+                        <!-- 'Get Involved' Dropdown Trigger -->
+                        <div class="group relative" data-dropdown-id="get-involved-dropdown">
+                            <a href="#"
+                                class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Get
+                                Involved</a>
+                        </div>
+
+                        <!-- Other Links -->
+                        <a href="Resources.html"
+                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Resources</a>
+
+                        <!-- 'Contact' link, now without a dropdown -->
+                        <a href="Contact.html"
+                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Contact</a>
+                    </div>
+
+                    <!-- Donate Button (Desktop version) -->
+                    <div>
+                        <!-- Using custom hex colors for background and hover effect -->
+                        <a href="Contact.html"
+                            class="inline-block bg-[#F7D57F] text-[#0B2369] font-light font-semibold py-3 px-8 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300 text-lg">
+                            Donate
+                        </a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -293,6 +305,10 @@
             </div>
         </div>
     </header>
+
+
+
+
 
 
 
@@ -557,23 +573,25 @@
 
 
     <!-- Footer Section -->
-    <footer class="bg-[#C8A25F] text-[#0A133E] py-16 px-4">
-        <div class="container mx-auto">
+    <footer class="playfair bg-[#C8A25F] text-[#0A133E] py-16 px-4">
+        <div class="container mx-auto ">
             <!-- Footer main content grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center sm:text-left items-center">
                 <div class="flex flex-col items-center sm:items-start">
                     <a href="index.html">
                         <img src="Assets/KAM LOGO.png" alt="KAM Logo" class="max-w-[10rem]" />
+                        <p class="text-lg text-center text-black font-bold mt-[-30px]">Kingdom Ambassadors <br>Missions
+                        </p>
                     </a>
-                    <p class="text-lg text-center mt-[-30px]">Kingdom Ambassadors <br>Missions</p>
                 </div>
 
                 <!-- Useful Links -->
                 <div class="flex flex-col items-center sm:items-start justify-center">
                     <h4 class="text-xl font-bold mb-4">Useful Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:underline">Get Inspired</a></li>
-                        <li><a href="#" class="hover:underline">Donate</a></li>
+                    <ul class="space-y-2 text-black Playfair footer-link-spacing">
+                        <li><a href="Inspire.html" class="hover:underline">Get Inspired</a></li>
+                        <li><a href="Contact.html" class="hover:underline">Donate</a>
+                        </li>
                         <li><a href="about.html" class="hover:underline">About Us</a></li>
                     </ul>
                 </div>
@@ -581,17 +599,17 @@
                 <!-- Contact -->
                 <div class="flex flex-col items-center sm:items-start justify-center">
                     <h4 class="text-xl font-bold mb-4">Contact</h4>
-                    <ul class="space-y-2">
-                        <li><strong>Address:</strong> Kigali, Rwanda</li>
-                        <li><strong>Tel:</strong> (250) 785-026-813</li>
-                        <li><strong>Email:</strong> info@kam.org</li>
+                    <ul class="text-black Playfair footer-link-spacing space-y-2">
+                        <li>Address: Kigali, Rwanda</li>
+                        <li>Tel: (250) 785-026-813</li>
+                        <li>Email: info@kam.org</li>
                     </ul>
                 </div>
 
                 <!-- Follow -->
                 <div class="flex flex-col items-center sm:items-start justify-center">
                     <h4 class="text-xl font-bold mb-4">Follow</h4>
-                    <ul class="space-y-2">
+                    <ul class="text-black Playfair footer-link-spacing space-y-2">
                         <li><a href="#" class="hover:underline">Press & Media</a></li>
                         <li><a href="#" class="hover:underline">Instagram</a></li>
                         <li><a href="#" class="hover:underline">Twitter/X</a></li>
