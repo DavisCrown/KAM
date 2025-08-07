@@ -293,32 +293,43 @@
 
 
 
-    <!-- Image Slideshow Section -->
-    <section class="relative w-full overflow-hidden">
-        <!-- The slideshow container holds all the slides and hides the overflow -->
+    <!-- DESKTOP SLIDESHOW (visible on md and above) -->
+    <section class="relative w-full overflow-hidden hidden md:block">
         <div class="slideshow-container">
-            <!-- The slideshow-inner is the movable element that holds all the slides -->
             <div class="slideshow-inner">
-                <!-- Slide 1 -->
                 <div class="mySlides">
-                    <!-- Replace the placeholder URL with your image URL -->
                     <img src="Assets/slide1.avif" alt="Image 1">
                 </div>
-
-                <!-- Slide 2 -->
                 <div class="mySlides">
-                    <!-- Replace the placeholder URL with your image URL -->
                     <img src="Assets/slide2.avif" alt="Image 2">
                 </div>
-
-                <!-- Slide 3 -->
                 <div class="mySlides">
-                    <!-- Replace the placeholder URL with your image URL -->
                     <img src="Assets/slide3.avif" alt="Image 3">
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- MOBILE SLIDESHOW (visible below md) -->
+    <section class="relative w-full overflow-hidden block md:hidden">
+        <div class="slideshow-container-mobile">
+            <div class="slideshow-inner-mobile">
+                <div class="mySlides-mobile">
+                    <!-- Added `w-full h-auto object-cover` classes to make the image responsive -->
+                    <img src="Assets/slide_1.png" alt="Mobile Image 1" class="w-full h-auto object-cover">
+                </div>
+                <div class="mySlides-mobile">
+                    <!-- Added `w-full h-auto object-cover` classes to make the image responsive -->
+                    <img src="Assets/slide_2.png" alt="Mobile Image 2" class="w-full h-auto object-cover">
+                </div>
+                <div class="mySlides-mobile">
+                    <!-- Added `w-full h-auto object-cover` classes to make the image responsive -->
+                    <img src="Assets/slide_3.png" alt="Mobile Image 3" class="w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 
 

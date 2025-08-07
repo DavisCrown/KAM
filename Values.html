@@ -24,57 +24,63 @@
     <!-- Navigation Bar -->
     <header class="bg-[#0B2369] shadow-lg font-sans relative">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Main navigation bar content. The logo and links are now grouped. -->
-            <div class="flex items-center justify-between md:justify-center h-28">
-                <!-- Grouping of Logo, Nav Links, and Donate Button -->
-                <div class="flex items-center space-x-12">
-                    <!-- Logo -->
-                    <div>
-                        <a href="index.html" class="flex items-center space-x-2 text-white">
-                            <img class="h-16 w-auto" src="Assets/kamlogo.png" alt="Logo">
-                        </a>
+            <!-- Main navigation bar content. The logo, donate button (mobile), and links/hamburger are now grouped. -->
+            <div class="flex items-center justify-between h-36"> <!-- justify-between for mobile -->
+                <!-- Logo -->
+                <div>
+                    <a href="index.html" class="flex items-center space-x-2 text-white">
+                        <img class="h-24 md:h-32 w-auto" src="Assets/kamlogo.png" alt="Logo">
+                    </a>
+                </div>
+
+                <!-- Donate Button (Visible on mobile, hidden on desktop) -->
+                <div class="md:hidden">
+                    <a href="Contact.html"
+                        class="inline-block bg-[#F7D57F] text-[#0B2369] font-light font-semibold py-3 px-6 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300 text-lg">
+                        Donate
+                    </a>
+                </div>
+
+                <!-- Desktop Menu Links, Contact, and Donate Button (Hidden on mobile, visible on desktop) -->
+                <div class="hidden md:flex items-center justify-center space-x-8">
+                    <!-- md:justify-center for desktop -->
+                    <!-- 'Who We Are' Dropdown Trigger -->
+                    <div class="group relative" data-dropdown-id="who-we-are-dropdown">
+                        <a href="#"
+                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Who
+                            We
+                            Are</a>
                     </div>
 
-                    <!-- Desktop Menu Links, Contact, and Donate Button -->
-                    <div class="hidden md:flex items-center space-x-8">
-                        <!-- 'Who We Are' Dropdown Trigger -->
-                        <div class="group relative" data-dropdown-id="who-we-are-dropdown">
-                            <a href="#"
-                                class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Who
-                                We
-                                Are</a>
-                        </div>
+                    <!-- 'What We Do' Dropdown Trigger -->
+                    <div class="group relative" data-dropdown-id="what-we-do-dropdown">
+                        <a href="#"
+                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">What
+                            We Do</a>
+                    </div>
 
-                        <!-- 'What We Do' Dropdown Trigger -->
-                        <div class="group relative" data-dropdown-id="what-we-do-dropdown">
-                            <a href="#"
-                                class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">What
-                                We Do</a>
-                        </div>
+                    <!-- 'Get Involved' Dropdown Trigger -->
+                    <div class="group relative" data-dropdown-id="get-involved-dropdown">
+                        <a href="#"
+                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Get
+                            Involved</a>
+                    </div>
 
-                        <!-- 'Get Involved' Dropdown Trigger -->
-                        <div class="group relative" data-dropdown-id="get-involved-dropdown">
-                            <a href="#"
-                                class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Get
-                                Involved</a>
-                        </div>
+                    <!-- Other Links -->
+                    <a href="Resources.html"
+                        class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Resources</a>
 
-                        <!-- Other Links -->
-                        <a href="Resources.html"
-                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Resources</a>
+                    <!-- 'Contact' link, now without a dropdown -->
+                    <a href="Contact.html"
+                        class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Contact</a>
 
-                        <!-- 'Contact' link, now without a dropdown -->
+                    <!-- Donate Button (Desktop version) -->
+                    <div>
+                        <!-- Using custom hex colors for background and hover effect -->
                         <a href="Contact.html"
-                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Contact</a>
-
-                        <!-- Donate Button -->
-                        <div>
-                            <!-- Using custom hex colors for background and hover effect -->
-                            <a href="Contact.html"
-                                class="inline-block bg-[#F7D57F] text-[#0B2369] font-light font-semibold py-3 px-8 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300 text-lg">
-                                Donate
-                            </a>
-                        </div>
+                            class="inline-block bg-[#F7D57F] text-[#0B2369] font-light font-semibold py-3 px-8 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300 text-lg">
+                            Donate
+                        </a>
                     </div>
                 </div>
 
@@ -283,12 +289,7 @@
                     class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-xl font-semibold">Resources</a>
                 <a href="Contact.html"
                     class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-xl font-semibold">Contact</a>
-                <div class="mt-4 px-2">
-                    <a href="#"
-                        class="inline-block w-full text-center bg-[#F7D57F] text-[#0B2369] font-light py-3 px-8 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300">
-                        Donate
-                    </a>
-                </div>
+                <!-- The Donate button is now outside this mobile menu div -->
             </div>
         </div>
     </header>
@@ -347,21 +348,21 @@
                         <!-- The wrapper div with max-w-xs keeps the paragraphs narrow and well-structured -->
                         <div class="max-w-xs">
                             <!-- Paragraphs describing the mission and values, now with a darker text color and increased font size -->
-                            <p class="playfair text-base md:text-lg leading-relaxed mb-4 text-gray-700">
+                            <p class="playfair text-base md:text-2xl leading-relaxed mb-4 text-gray-700">
                                 At Kingdom Ambassadors Missions, our calling is to share the good news of Jesus Christ
                                 with
                                 communities in Rwanda where His name is rarely known or understood.
                             </p>
-                            <p class="playfair text-base md:text-lg leading-relaxed mb-4 text-gray-700">
+                            <p class="playfair text-base md:text-2xl leading-relaxed mb-4 text-gray-700">
                                 We work alongside local churches, helping them build meaningful connections with those
                                 often
                                 overlooked or unreached.
                             </p>
-                            <p class="playfair text-base md:text-lg leading-relaxed mb-4 text-gray-700">
+                            <p class="playfair text-base md:text-2xl leading-relaxed mb-4 text-gray-700">
                                 We believe our message must be reflected in the way we live, serve, and relate to
                                 others—with integrity, humility, and love.
                             </p>
-                            <p class="playfair text-base md:text-lg leading-relaxed text-gray-700">
+                            <p class="playfair text-base md:text-2xl leading-relaxed text-gray-700">
                                 Our values shape everything we do—from how we engage with communities, to how we walk
                                 with
                                 the Church, and how we serve together as a team.

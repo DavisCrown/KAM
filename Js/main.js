@@ -85,4 +85,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // Start the auto-sliding when the page loads
   setInterval(showNextSlide, intervalTime);
 });
+// JavaScript for the mobile slideshow
+let slideIndexMobile = 0;
+showSlidesMobile();
 
+function showSlidesMobile() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides-mobile");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndexMobile++;
+  if (slideIndexMobile > slides.length) {
+    slideIndexMobile = 1;
+  }
+  slides[slideIndexMobile - 1].style.display = "block";
+  setTimeout(showSlidesMobile, 3000); // Change image every 3 seconds
+}

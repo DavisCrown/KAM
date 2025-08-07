@@ -24,57 +24,63 @@
     <!-- Navigation Bar -->
     <header class="bg-[#0B2369] shadow-lg font-sans relative">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Main navigation bar content. The logo and links are now grouped. -->
-            <div class="flex items-center justify-between md:justify-center h-28">
-                <!-- Grouping of Logo, Nav Links, and Donate Button -->
-                <div class="flex items-center space-x-12">
-                    <!-- Logo -->
-                    <div>
-                        <a href="index.html" class="flex items-center space-x-2 text-white">
-                            <img class="h-16 w-auto" src="Assets/kamlogo.png" alt="Logo">
-                        </a>
+            <!-- Main navigation bar content. The logo, donate button (mobile), and links/hamburger are now grouped. -->
+            <div class="flex items-center justify-between h-36"> <!-- justify-between for mobile -->
+                <!-- Logo -->
+                <div>
+                    <a href="index.html" class="flex items-center space-x-2 text-white">
+                        <img class="h-24 md:h-32 w-auto" src="Assets/kamlogo.png" alt="Logo">
+                    </a>
+                </div>
+
+                <!-- Donate Button (Visible on mobile, hidden on desktop) -->
+                <div class="md:hidden">
+                    <a href="Contact.html"
+                        class="inline-block bg-[#F7D57F] text-[#0B2369] font-light font-semibold py-3 px-6 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300 text-lg">
+                        Donate
+                    </a>
+                </div>
+
+                <!-- Desktop Menu Links, Contact, and Donate Button (Hidden on mobile, visible on desktop) -->
+                <div class="hidden md:flex items-center justify-center space-x-8">
+                    <!-- md:justify-center for desktop -->
+                    <!-- 'Who We Are' Dropdown Trigger -->
+                    <div class="group relative" data-dropdown-id="who-we-are-dropdown">
+                        <a href="#"
+                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Who
+                            We
+                            Are</a>
                     </div>
 
-                    <!-- Desktop Menu Links, Contact, and Donate Button -->
-                    <div class="hidden md:flex items-center space-x-8">
-                        <!-- 'Who We Are' Dropdown Trigger -->
-                        <div class="group relative" data-dropdown-id="who-we-are-dropdown">
-                            <a href="#"
-                                class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Who
-                                We
-                                Are</a>
-                        </div>
+                    <!-- 'What We Do' Dropdown Trigger -->
+                    <div class="group relative" data-dropdown-id="what-we-do-dropdown">
+                        <a href="#"
+                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">What
+                            We Do</a>
+                    </div>
 
-                        <!-- 'What We Do' Dropdown Trigger -->
-                        <div class="group relative" data-dropdown-id="what-we-do-dropdown">
-                            <a href="#"
-                                class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">What
-                                We Do</a>
-                        </div>
+                    <!-- 'Get Involved' Dropdown Trigger -->
+                    <div class="group relative" data-dropdown-id="get-involved-dropdown">
+                        <a href="#"
+                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Get
+                            Involved</a>
+                    </div>
 
-                        <!-- 'Get Involved' Dropdown Trigger -->
-                        <div class="group relative" data-dropdown-id="get-involved-dropdown">
-                            <a href="#"
-                                class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Get
-                                Involved</a>
-                        </div>
+                    <!-- Other Links -->
+                    <a href="Resources.html"
+                        class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Resources</a>
 
-                        <!-- Other Links -->
-                        <a href="Resources.html"
-                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Resources</a>
+                    <!-- 'Contact' link, now without a dropdown -->
+                    <a href="Contact.html"
+                        class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Contact</a>
 
-                        <!-- 'Contact' link, now without a dropdown -->
+                    <!-- Donate Button (Desktop version) -->
+                    <div>
+                        <!-- Using custom hex colors for background and hover effect -->
                         <a href="Contact.html"
-                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Contact</a>
-
-                        <!-- Donate Button -->
-                        <div>
-                            <!-- Using custom hex colors for background and hover effect -->
-                            <a href="Contact.html"
-                                class="inline-block bg-[#F7D57F] text-[#0B2369] font-light font-semibold py-3 px-8 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300 text-lg">
-                                Donate
-                            </a>
-                        </div>
+                            class="inline-block bg-[#F7D57F] text-[#0B2369] font-light font-semibold py-3 px-8 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300 text-lg">
+                            Donate
+                        </a>
                     </div>
                 </div>
 
@@ -283,12 +289,7 @@
                     class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-xl font-semibold">Resources</a>
                 <a href="Contact.html"
                     class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-xl font-semibold">Contact</a>
-                <div class="mt-4 px-2">
-                    <a href="#"
-                        class="inline-block w-full text-center bg-[#F7D57F] text-[#0B2369] font-light py-3 px-8 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300">
-                        Donate
-                    </a>
-                </div>
+                <!-- The Donate button is now outside this mobile menu div -->
             </div>
         </div>
     </header>
@@ -328,7 +329,7 @@
         </h1>
 
         <!-- Introduction Paragraphs -->
-        <div class="max-w-4xl mx-auto text-gray-700 text-lg leading-relaxed mb-16">
+        <div class="max-w-4xl mx-auto text-gray-700 text-2xl leading-relaxed mb-16">
             <p class="playfair mb-6">
                 Our mission is to reach out and collaborate with your church in fulfilling your vision for community
                 outreach.
@@ -362,7 +363,7 @@
                     <p class="playfair mb-2">
                         <span class="font-bold">1. Beginning With Your Vision</span>
                     </p>
-                    <p class="playfair text-[#CCCCCC]">
+                    <p class="playfair text-[#CCCCCC] text-xl">
                         Many churches already possess a vision for reaching those in their vicinity with the
                         transformative
                         message of Jesus. We are eager to foster your vision and work alongside you to bring it to
@@ -376,7 +377,7 @@
                     <p class="playfair mb-2">
                         <span class="font-bold">2. Understanding Your Community</span>
                     </p>
-                    <p class="playfair text-[#CCCCCC]">
+                    <p class="playfair text-[#CCCCCC] text-xl">
                         Together, we can gain deeper insights into your local community and their needs, allowing you to
                         connect and serve them in meaningful and compassionate ways. This process may include
                         identifying a
@@ -389,7 +390,7 @@
                     <p class="playfair mb-2">
                         <span class="font-bold">3. Developing Your Ministry</span>
                     </p>
-                    <p class="playfair text-[#CCCCCC]">
+                    <p class="playfair text-[#CCCCCC] text-xl">
                         Using our understanding of your community along with the strengths and interests within your
                         church,
                         we can assist in shaping what your ministry may look like. This could involve launching a new
@@ -406,7 +407,7 @@
                     <p class=" playfair mb-2">
                         <span class="font-bold">4. Engaging Together</span>
                     </p>
-                    <p class="playfair text-[#CCCCCC]">
+                    <p class="playfair text-[#CCCCCC] text-xl">
                         This is where the excitement begins! Our seasoned missionaries are passionate about joining
                         Christians in going out into
                         the local community, providing encouragement as they share the message of Jesus. We often
@@ -421,7 +422,7 @@
                     <p class="playfair mb-2">
                         <span class="font-bold">5. Empowering Your Church</span>
                     </p>
-                    <p class="playfair text-[#CCCCCC]">
+                    <p class="playfair text-[#CCCCCC] text-xl">
                         Ultimately, once your ministry is developed and thriving, we can step back at the appropriate
                         time, while continuing to
                         offer support as needed.
@@ -445,7 +446,7 @@
 
             <div class="flex flex-col md:flex-row items-stretch gap-0 relative mb-16">
                 <!-- Image container on the left -->
-                <div class="relative md:w-1/2 w-full h-[300px] overflow-hidden">
+                <div class="relative md:w-1/2 w-full h-auto overflow-hidden">
                     <img src="Assets/visiting homes.png" alt="Volunteers distributing food"
                         class="absolute inset-0 w-full h-full object-cover z-10">
                     <div class="absolute bottom-0 left-0 w-full h-2 bg-[#F5C543]"></div>
@@ -457,7 +458,7 @@
                     <h3 class="text-[#2C3D74] text-2xl md:text-3xl font-bold mb-4">
                         Visiting Homes
                     </h3>
-                    <p class="text-[#5C5C5C] text-base md:text-lg leading-relaxed">
+                    <p class="text-[#5C5C5C] text-base md:text-xl leading-relaxed">
                         A great way to connect with your community is by going door-to-door to introduce yourself to
                         your neighbors! Our
                         experience shows that a deliberate and systematic approach to visiting residents within a
@@ -470,7 +471,7 @@
             </div>
             <div class="flex flex-col md:flex-row items-stretch gap-0 relative mb-16">
                 <!-- Image container on the left -->
-                <div class="relative md:w-1/2 w-full h-[300px] overflow-hidden">
+                <div class="relative md:w-1/2 w-full h-auto overflow-hidden">
                     <img src="Assets/Muslim.jpg" alt="Volunteers distributing food"
                         class="absolute inset-0 w-full h-full object-cover z-10">
                     <div class="absolute bottom-0 left-0 w-full h-2 bg-[#F5C543]"></div>
@@ -482,7 +483,7 @@
                     <h3 class="text-[#2C3D74] text-2xl md:text-3xl font-bold mb-4">
                         Engaging Muslims with the Gospel
                     </h3>
-                    <p class="text-[#5C5C5C] text-base md:text-lg leading-relaxed">
+                    <p class="text-[#5C5C5C] text-base md:text-xl leading-relaxed">
                         Every year, we provide training for hundreds of Christians through our Muslim Engagement
                         Training program. Participants
                         learn about the roots of Islam, the evidence supporting the crucifixion, and how to engage in
@@ -496,7 +497,7 @@
 
             <div class="flex flex-col md:flex-row items-stretch gap-0 relative mb-16">
                 <!-- Image container on the left -->
-                <div class="relative md:w-1/2 w-full h-[300px] overflow-hidden">
+                <div class="relative md:w-1/2 w-full h-auto overflow-hidden">
                     <img src="Assets/Wondmass (2).jpg" alt="Volunteers distributing food"
                         class="absolute inset-0 w-full h-full object-cover z-10">
                     <div class="absolute bottom-0 left-0 w-full h-2 bg-[#F5C543]"></div>
@@ -508,7 +509,7 @@
                     <h3 class="text-[#2C3D74] text-2xl md:text-3xl font-bold mb-4">
                         Reaching Schools
                     </h3>
-                    <p class="text-[#5C5C5C] text-base md:text-lg leading-relaxed">
+                    <p class="text-[#5C5C5C] text-base md:text-xl leading-relaxed">
                         Christianity education is mandatory in all schools in England, but not every school has
                         Christian teachers present. To
                         address this, we collaborate with churches and schools to share personal faith experiences,
@@ -522,7 +523,7 @@
 
             <div class="flex flex-col md:flex-row items-stretch gap-0 relative mb-16">
                 <!-- Image container on the left -->
-                <div class="relative md:w-1/2 w-full h-[300px] overflow-hidden">
+                <div class="relative md:w-1/2 w-full h-auto overflow-hidden">
                     <img src="Assets/Gallerybg.avif" alt="Volunteers distributing food"
                         class="absolute inset-0 w-full h-full object-cover z-10">
                     <div class="absolute bottom-0 left-0 w-full h-2 bg-[#F5C543]"></div>
@@ -534,7 +535,7 @@
                     <h3 class="text-[#2C3D74] text-2xl md:text-3xl font-bold mb-4">
                         Various Evangelism Efforts
                     </h3>
-                    <p class="text-[#5C5C5C] text-base md:text-lg leading-relaxed">
+                    <p class="text-[#5C5C5C] text-base md:text-xl leading-relaxed">
                         We engage in multiple forms of evangelism, including:
 
                         Street Evangelism

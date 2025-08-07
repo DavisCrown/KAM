@@ -24,57 +24,63 @@
     <!-- Navigation Bar -->
     <header class="bg-[#0B2369] shadow-lg font-sans relative">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Main navigation bar content. The logo and links are now grouped. -->
-            <div class="flex items-center justify-between md:justify-center h-28">
-                <!-- Grouping of Logo, Nav Links, and Donate Button -->
-                <div class="flex items-center space-x-12">
-                    <!-- Logo -->
-                    <div>
-                        <a href="index.html" class="flex items-center space-x-2 text-white">
-                            <img class="h-16 w-auto" src="Assets/kamlogo.png" alt="Logo">
-                        </a>
+            <!-- Main navigation bar content. The logo, donate button (mobile), and links/hamburger are now grouped. -->
+            <div class="flex items-center justify-between h-36"> <!-- justify-between for mobile -->
+                <!-- Logo -->
+                <div>
+                    <a href="index.html" class="flex items-center space-x-2 text-white">
+                        <img class="h-24 md:h-32 w-auto" src="Assets/kamlogo.png" alt="Logo">
+                    </a>
+                </div>
+
+                <!-- Donate Button (Visible on mobile, hidden on desktop) -->
+                <div class="md:hidden">
+                    <a href="Contact.html"
+                        class="inline-block bg-[#F7D57F] text-[#0B2369] font-light font-semibold py-3 px-6 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300 text-lg">
+                        Donate
+                    </a>
+                </div>
+
+                <!-- Desktop Menu Links, Contact, and Donate Button (Hidden on mobile, visible on desktop) -->
+                <div class="hidden md:flex items-center justify-center space-x-8">
+                    <!-- md:justify-center for desktop -->
+                    <!-- 'Who We Are' Dropdown Trigger -->
+                    <div class="group relative" data-dropdown-id="who-we-are-dropdown">
+                        <a href="#"
+                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Who
+                            We
+                            Are</a>
                     </div>
 
-                    <!-- Desktop Menu Links, Contact, and Donate Button -->
-                    <div class="hidden md:flex items-center space-x-8">
-                        <!-- 'Who We Are' Dropdown Trigger -->
-                        <div class="group relative" data-dropdown-id="who-we-are-dropdown">
-                            <a href="#"
-                                class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Who
-                                We
-                                Are</a>
-                        </div>
+                    <!-- 'What We Do' Dropdown Trigger -->
+                    <div class="group relative" data-dropdown-id="what-we-do-dropdown">
+                        <a href="#"
+                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">What
+                            We Do</a>
+                    </div>
 
-                        <!-- 'What We Do' Dropdown Trigger -->
-                        <div class="group relative" data-dropdown-id="what-we-do-dropdown">
-                            <a href="#"
-                                class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">What
-                                We Do</a>
-                        </div>
+                    <!-- 'Get Involved' Dropdown Trigger -->
+                    <div class="group relative" data-dropdown-id="get-involved-dropdown">
+                        <a href="#"
+                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Get
+                            Involved</a>
+                    </div>
 
-                        <!-- 'Get Involved' Dropdown Trigger -->
-                        <div class="group relative" data-dropdown-id="get-involved-dropdown">
-                            <a href="#"
-                                class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Get
-                                Involved</a>
-                        </div>
+                    <!-- Other Links -->
+                    <a href="Resources.html"
+                        class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Resources</a>
 
-                        <!-- Other Links -->
-                        <a href="Resources.html"
-                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Resources</a>
+                    <!-- 'Contact' link, now without a dropdown -->
+                    <a href="Contact.html"
+                        class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Contact</a>
 
-                        <!-- 'Contact' link, now without a dropdown -->
+                    <!-- Donate Button (Desktop version) -->
+                    <div>
+                        <!-- Using custom hex colors for background and hover effect -->
                         <a href="Contact.html"
-                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Contact</a>
-
-                        <!-- Donate Button -->
-                        <div>
-                            <!-- Using custom hex colors for background and hover effect -->
-                            <a href="Contact.html"
-                                class="inline-block bg-[#F7D57F] text-[#0B2369] font-light font-semibold py-3 px-8 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300 text-lg">
-                                Donate
-                            </a>
-                        </div>
+                            class="inline-block bg-[#F7D57F] text-[#0B2369] font-light font-semibold py-3 px-8 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300 text-lg">
+                            Donate
+                        </a>
                     </div>
                 </div>
 
@@ -283,12 +289,7 @@
                     class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-xl font-semibold">Resources</a>
                 <a href="Contact.html"
                     class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-xl font-semibold">Contact</a>
-                <div class="mt-4 px-2">
-                    <a href="#"
-                        class="inline-block w-full text-center bg-[#F7D57F] text-[#0B2369] font-light py-3 px-8 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300">
-                        Donate
-                    </a>
-                </div>
+                <!-- The Donate button is now outside this mobile menu div -->
             </div>
         </div>
     </header>
@@ -328,7 +329,7 @@
         </h1>
 
         <!-- Introduction Paragraphs -->
-        <div class="max-w-4xl mx-auto text-gray-700 text-lg leading-relaxed mb-16">
+        <div class="max-w-4xl mx-auto text-gray-700 text-2xl leading-relaxed mb-16">
             <p class="mb-6">
                 We are committed to empowering communities to discover their purpose in life, embrace their unique
                 callings
@@ -347,7 +348,7 @@
             <h2 class="playfair text-3xl md:text-4xl font-semibold text-custom-blue mb-8">
                 Our Training Programs
             </h2>
-            <div class="text-gray-700 text-lg leading-relaxed space-y-6">
+            <div class="text-gray-700 text-2xl leading-relaxed space-y-6">
                 <p>
                     We offer a diverse selection of training courses tailored specifically for church groups and various
                     organizations seeking to enhance their knowledge on a range of topics, including leadership and
@@ -382,7 +383,7 @@
                     class="w-full h-[450px] object-cover shadow-lg">
             </div>
             <!-- Text content on the right -->
-            <div class="lg:w-1/2 text-gray-700 text-lg leading-relaxed space-y-6">
+            <div class="lg:w-1/2 text-gray-700 text-xl leading-relaxed space-y-6">
                 <h2 class="playfair text-3xl md:text-4xl font-semibold text-custom-blue mb-4">
                     Bespoke Church Trainings
                 </h2>
@@ -443,7 +444,7 @@
 
             <div class="flex flex-col md:flex-row items-stretch gap-0 relative mb-16">
                 <!-- Image container on the left -->
-                <div class="relative md:w-1/2 w-full h-[300px] overflow-hidden">
+                <div class="relative md:w-1/2 w-full h-auto overflow-hidden">
                     <img src="Assets/Training.jpg" alt="Volunteers distributing food"
                         class="absolute inset-0 w-full h-full object-cover z-10">
                     <div class="absolute bottom-0 left-0 w-full h-2 bg-[#F5C543]"></div>
@@ -455,7 +456,7 @@
                     <h3 class="text-[#2C3D74] text-2xl md:text-3xl font-bold mb-4">
                         Pre-Trip Training
                     </h3>
-                    <p class="text-[#5C5C5C] text-base md:text-lg leading-relaxed">
+                    <p class="text-[#5C5C5C] text-base md:text-xl leading-relaxed">
                         We offer comprehensive training sessions for ministers and teams preparing to embark on
                         evangelistic missions across
                         Africa. These sessions cover essential topics such as cross-cultural communication, effective
@@ -480,7 +481,7 @@
                     <h3 class="text-[#2C3D74] text-2xl md:text-3xl font-bold mb-4">
                         Local Outreach Initiatives
                     </h3>
-                    <p class="text-[#5C5C5C] text-base md:text-lg leading-relaxed">
+                    <p class="text-[#5C5C5C] text-base md:text-xl leading-relaxed">
                         Partnering with local churches and community organizations, we facilitate various outreach
                         initiatives including:
                     </p>
@@ -501,7 +502,7 @@
                     <h3 class="text-[#2C3D74] text-2xl md:text-3xl font-bold mb-4">
                         Evangelistic Campaigns
                     </h3>
-                    <p class="text-[#5C5C5C] text-base md:text-lg leading-relaxed">
+                    <p class="text-[#5C5C5C] text-base md:text-xl leading-relaxed">
                         We coordinate large-scale evangelistic campaigns in cities and rural areas, featuring open-air
                         meetings, concerts, and
                         community festivals. These events often include:
@@ -514,7 +515,7 @@
 
             <div class="flex flex-col md:flex-row items-stretch gap-0 relative mb-16">
                 <!-- Image container on the left -->
-                <div class="relative md:w-1/2 w-full h-[300px] overflow-hidden">
+                <div class="relative md:w-1/2 w-full h-auto overflow-hidden">
                     <img src="Assets/download (5).png" alt="Volunteers distributing food"
                         class="absolute inset-0 w-full h-full object-cover z-10">
                     <div class="absolute bottom-0 left-0 w-full h-2 bg-[#F5C543]"></div>
@@ -526,7 +527,7 @@
                     <h3 class="text-[#2C3D74] text-2xl md:text-3xl font-bold mb-4">
                         Teams from Around the World
                     </h3>
-                    <p class="text-[#5C5C5C] text-base md:text-lg leading-relaxed">
+                    <p class="text-[#5C5C5C] text-base md:text-xl leading-relaxed">
                         We welcome teams from various countries who seek to participate in evangelical outreach. These
                         teams often include
                         medical professionals providing health care, educators conducting literacy programs, and
@@ -539,7 +540,7 @@
 
             <div class="flex flex-col md:flex-row items-stretch gap-0 relative mb-16">
                 <!-- Image container on the left -->
-                <div class="relative md:w-1/2 w-full h-[300px] overflow-hidden">
+                <div class="relative md:w-1/2 w-full h-auto overflow-hidden">
                     <img src="Assets/team.avif" alt="Volunteers distributing food"
                         class="absolute inset-0 w-full h-full object-cover z-10">
                     <div class="absolute bottom-0 left-0 w-full h-2 bg-[#F5C543]"></div>
@@ -551,7 +552,7 @@
                     <h3 class="text-[#2C3D74] text-2xl md:text-3xl font-bold mb-4">
                         Through Go Africa Evangelism
                     </h3>
-                    <p class="text-[#5C5C5C] text-base md:text-lg leading-relaxed">
+                    <p class="text-[#5C5C5C] text-base md:text-xl leading-relaxed">
                         We enable a holistic approach to outreach that combines Gospel proclamation with tangible acts
                         of service, fostering
                         transformation in individuals and communities across Africa. By connecting Christian ministers

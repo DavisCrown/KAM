@@ -24,57 +24,63 @@
     <!-- Navigation Bar -->
     <header class="bg-[#0B2369] shadow-lg font-sans relative">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Main navigation bar content. The logo and links are now grouped. -->
-            <div class="flex items-center justify-between md:justify-center h-28">
-                <!-- Grouping of Logo, Nav Links, and Donate Button -->
-                <div class="flex items-center space-x-12">
-                    <!-- Logo -->
-                    <div>
-                        <a href="index.html" class="flex items-center space-x-2 text-white">
-                            <img class="h-16 w-auto" src="Assets/kamlogo.png" alt="Logo">
-                        </a>
+            <!-- Main navigation bar content. The logo, donate button (mobile), and links/hamburger are now grouped. -->
+            <div class="flex items-center justify-between h-36"> <!-- justify-between for mobile -->
+                <!-- Logo -->
+                <div>
+                    <a href="index.html" class="flex items-center space-x-2 text-white">
+                        <img class="h-24 md:h-32 w-auto" src="Assets/kamlogo.png" alt="Logo">
+                    </a>
+                </div>
+
+                <!-- Donate Button (Visible on mobile, hidden on desktop) -->
+                <div class="md:hidden">
+                    <a href="Contact.html"
+                        class="inline-block bg-[#F7D57F] text-[#0B2369] font-light font-semibold py-3 px-6 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300 text-lg">
+                        Donate
+                    </a>
+                </div>
+
+                <!-- Desktop Menu Links, Contact, and Donate Button (Hidden on mobile, visible on desktop) -->
+                <div class="hidden md:flex items-center justify-center space-x-8">
+                    <!-- md:justify-center for desktop -->
+                    <!-- 'Who We Are' Dropdown Trigger -->
+                    <div class="group relative" data-dropdown-id="who-we-are-dropdown">
+                        <a href="#"
+                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Who
+                            We
+                            Are</a>
                     </div>
 
-                    <!-- Desktop Menu Links, Contact, and Donate Button -->
-                    <div class="hidden md:flex items-center space-x-8">
-                        <!-- 'Who We Are' Dropdown Trigger -->
-                        <div class="group relative" data-dropdown-id="who-we-are-dropdown">
-                            <a href="#"
-                                class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Who
-                                We
-                                Are</a>
-                        </div>
+                    <!-- 'What We Do' Dropdown Trigger -->
+                    <div class="group relative" data-dropdown-id="what-we-do-dropdown">
+                        <a href="#"
+                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">What
+                            We Do</a>
+                    </div>
 
-                        <!-- 'What We Do' Dropdown Trigger -->
-                        <div class="group relative" data-dropdown-id="what-we-do-dropdown">
-                            <a href="#"
-                                class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">What
-                                We Do</a>
-                        </div>
+                    <!-- 'Get Involved' Dropdown Trigger -->
+                    <div class="group relative" data-dropdown-id="get-involved-dropdown">
+                        <a href="#"
+                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Get
+                            Involved</a>
+                    </div>
 
-                        <!-- 'Get Involved' Dropdown Trigger -->
-                        <div class="group relative" data-dropdown-id="get-involved-dropdown">
-                            <a href="#"
-                                class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Get
-                                Involved</a>
-                        </div>
+                    <!-- Other Links -->
+                    <a href="Resources.html"
+                        class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Resources</a>
 
-                        <!-- Other Links -->
-                        <a href="Resources.html"
-                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Resources</a>
+                    <!-- 'Contact' link, now without a dropdown -->
+                    <a href="Contact.html"
+                        class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Contact</a>
 
-                        <!-- 'Contact' link, now without a dropdown -->
+                    <!-- Donate Button (Desktop version) -->
+                    <div>
+                        <!-- Using custom hex colors for background and hover effect -->
                         <a href="Contact.html"
-                            class="nav-link-underline text-white uppercase tracking-wider font-semibold text-lg">Contact</a>
-
-                        <!-- Donate Button -->
-                        <div>
-                            <!-- Using custom hex colors for background and hover effect -->
-                            <a href="Contact.html"
-                                class="inline-block bg-[#F7D57F] text-[#0B2369] font-light font-semibold py-3 px-8 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300 text-lg">
-                                Donate
-                            </a>
-                        </div>
+                            class="inline-block bg-[#F7D57F] text-[#0B2369] font-light font-semibold py-3 px-8 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300 text-lg">
+                            Donate
+                        </a>
                     </div>
                 </div>
 
@@ -283,12 +289,7 @@
                     class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-xl font-semibold">Resources</a>
                 <a href="Contact.html"
                     class="text-white hover:bg-[#1A3B8A] hover:text-[#F7D57F] block px-3 py-2 rounded-md text-xl font-semibold">Contact</a>
-                <div class="mt-4 px-2">
-                    <a href="#"
-                        class="inline-block w-full text-center bg-[#F7D57F] text-[#0B2369] font-light py-3 px-8 uppercase tracking-wider hover:bg-[#E6C46E] transition-colors duration-300">
-                        Donate
-                    </a>
-                </div>
+                <!-- The Donate button is now outside this mobile menu div -->
             </div>
         </div>
     </header>
@@ -331,7 +332,8 @@
             <div class="flex flex-wrap lg:flex-nowrap gap-8">
                 <!-- Left Column - Text Content -->
                 <div class="w-full lg:w-2/3 bg-white p-8 rounded-lg ">
-                    <p class="text-4xl text-[#444444]">As evangelical Christians, we <br>uphold the following core
+                    <p class="Playfair text-3xl text-[#444444]">As evangelical Christians, we <br>uphold the following
+                        core
                         doctrines as
                         essential
                         to the Christian
@@ -393,7 +395,7 @@
             <!-- Single main container for all text content, styled with a background and shadow -->
             <div class="max-w-4xl mx-auto p-6 md:p-8 bg-[#324158] text-[#e2e8f0]">
                 <!-- Introductory paragraph with slightly reduced font size -->
-                <p class="text-sm md:text-base leading-relaxed mb-6">
+                <p class="text-base md:text-base leading-relaxed mb-6">
                     At Kingdom Ambassadors Mission (KAM), we affirm our unwavering belief in the foundational truths of
                     the
                     Christian faith revealed in Scripture. We strive to embody the teachings and principles of our faith
